@@ -1,0 +1,35 @@
+{
+  "name": "match-discriminated-union",
+  "version": "1.0.0",
+  "description": "pattern match function for any discriminated union type",
+  "main": "./dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    }
+  },
+  "scripts": {
+    "test": "tsc && vitest",
+    "build": "rm -rf dist && tsc && tsc --project tsconfig.esm.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json"
+  },
+  "keywords": [
+    "match",
+    "pattern",
+    "union",
+    "discriminated",
+    "tagged",
+    "typescript"
+  ],
+  "author": "Lily Skye <me@suchipi.com>",
+  "repository": "suchipi/match-discriminated-union",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.0.1",
+    "typescript": "^5.1.6",
+    "typescript-assert-utils": "^1.1.0",
+    "vitest": "^0.34.1"
+  },
+  "prettier": {}
+}
