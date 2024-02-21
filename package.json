@@ -23,7 +23,10 @@
     "typescript"
   ],
   "author": "Lily Skye <me@suchipi.com>",
-  "repository": "suchipi/match-discriminated-union",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suchipi/match-discriminated-union.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "prettier": "^3.2.5",
