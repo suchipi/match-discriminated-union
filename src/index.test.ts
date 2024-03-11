@@ -66,6 +66,19 @@ test("match - returns the return value from the corresponding handler", () => {
   testVal({ type: "yeppers", yes: "mhm" });
 });
 
+test("match - falls back to the default handler", () => {
+  function testVal(val: Something) {
+    const ret = match(val, "type", {
+      yeppers: () => 0.01,
+      _: () => 999,
+    });
+
+    expect(ret).toBe(999);
+  }
+
+  testVal({ type: "maybe" });
+});
+
 test("match - throws an error if there is no handler for the specified type", () => {
   function testVal(val: Something) {
     match(
@@ -74,7 +87,7 @@ test("match - throws an error if there is no handler for the specified type", ()
       // @ts-expect-error
       {
         yeppers: () => 0.01,
-      }
+      },
     );
   }
 

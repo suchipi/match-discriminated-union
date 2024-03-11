@@ -5,7 +5,7 @@ export function match<
     | ({
         // optional variants with default handler
         [Key in Union[TypeKey]]?: (
-          value: Union & { [K in TypeKey]: Key }
+          value: Union & { [K in TypeKey]: Key },
         ) => any;
       } & {
         _: (value: Union) => any;
@@ -17,17 +17,20 @@ export function match<
     | {
         // handle all variants
         [Key in Union[TypeKey]]: (
-          value: Union & { [K in TypeKey]: Key }
+          value: Union & { [K in TypeKey]: Key },
         ) => any;
       },
   Ret extends ReturnType<
     Extract<Handlers[keyof Handlers], (...args: any) => any>
-  >
+  >,
 >(value: Union, key: TypeKey, handlers: Handlers): Ret {
   const type = value[key];
   const handler = handlers[type];
   if (handler) {
     return handler(value);
+  } else if ((handlers as any)._) {
+    const defaultHandler = (handlers as any)._;
+    return defaultHandler(value);
   } else {
     throw new Error("Unhandled case in match: " + type);
   }
