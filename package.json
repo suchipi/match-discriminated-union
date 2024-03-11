@@ -1,6 +1,6 @@
 {
   "name": "match-discriminated-union",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "pattern match function for any discriminated union type",
   "main": "./dist/cjs/index.js",
   "module": "dist/esm/index.js",
