@@ -2,12 +2,9 @@
   "include": ["src/**/*.ts"],
 
   "compilerOptions": {
-    "outDir": "dist/cjs",
-
     "declaration": true,
     "lib": ["ES2015"],
     "target": "ES2015",
-    "module": "CommonJS",
     "moduleResolution": "node",
 
     "strict": true,
@@ -24,7 +21,6 @@
     "downlevelIteration": false,
 
     "esModuleInterop": true,
-    "resolveJsonModule": true,
     "skipLibCheck": true
   }
 }

@@ -11,8 +11,8 @@
     }
   },
   "scripts": {
-    "test": "tsc && vitest",
-    "build": "rm -rf dist && tsc && tsc --project tsconfig.esm.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json"
+    "test": "tsc --noEmit && vitest",
+    "build": "rm -rf dist && tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json"
   },
   "keywords": [
     "match",

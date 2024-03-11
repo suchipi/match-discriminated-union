@@ -2,8 +2,8 @@
   "extends": "./tsconfig.json",
 
   "compilerOptions": {
-    "outDir": "dist/esm",
+    "outDir": "dist/cjs",
 
-    "module": "es2022"
+    "module": "CommonJS"
   }
 }
