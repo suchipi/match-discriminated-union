@@ -44,7 +44,7 @@ declare var something: Something;
       yeppers: (val) => val.yes,
       nope: (val) => val.definitelyNot,
       maybe: (val) => new Set(),
-    }
+    },
   );
 
   match(
@@ -54,14 +54,14 @@ declare var something: Something;
     {
       nope: (val) => val.definitelyNot,
       maybe: (val) => new Set(),
-    }
+    },
   );
 
   match(
     something,
     "type",
     // @ts-expect-error not valid
-    {}
+    {},
   );
 }
 
