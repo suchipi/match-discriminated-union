@@ -5,7 +5,9 @@
     "declaration": true,
     "lib": ["ES2015"],
     "target": "ES2015",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+
+    "rootDir": "src",
 
     "strict": true,
     "noImplicitAny": false,
@@ -18,7 +20,6 @@
     "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "downlevelIteration": false,
 
     "esModuleInterop": true,
     "skipLibCheck": true

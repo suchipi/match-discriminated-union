@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "tsc --noEmit && vitest",
-    "build": "rm -rf dist && tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json"
+    "build": "rm -rf dist && tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json && echo '{\"type\":\"commonjs\"}' > dist/cjs/package.json && echo '{\"type\":\"module\"}' > dist/esm/package.json && rm -rf dist/**/*.{type-,}test.*"
   },
   "keywords": [
     "match",
@@ -29,10 +29,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "prettier": "^3.4.2",
-    "typescript": "^5.7.3",
-    "typescript-assert-utils": "^1.1.0",
-    "vitest": "^3.0.2"
+    "prettier": "^3.9.5",
+    "typescript": "^7.0.2",
+    "typescript-assert-utils": "^1.2.0",
+    "vitest": "^4.1.10"
   },
-  "prettier": {}
+  "prettier": {},
+  "allowScripts": {
+    "fsevents@2.3.3": true
+  }
 }
